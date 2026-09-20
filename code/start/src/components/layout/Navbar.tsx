@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, Moon, Search, ShoppingCart, Sun, X } from "lucide-react";
+import { Menu, Moon, ShoppingCart, Sun, X } from "lucide-react";
 
 import { useCartStore } from "@/stores/cart-store";
 import { useThemeStore } from "@/stores/theme-store";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { SearchBar } from "@/components/shared/SearchBar";
 
 const links = [
         { label: "Home", to: "/" },
@@ -49,15 +50,7 @@ function Navbar() {
                                 </nav>
 
                                 <div className="hidden items-center gap-2 md:flex">
-                                        <form className="relative" role="search">
-                                                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                                                <input
-                                                        aria-label="Search products"
-                                                        className="h-9 w-40 rounded-md border bg-background pl-9 pr-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-                                                        placeholder="Search"
-                                                        type="search"
-                                                />
-                                        </form>
+                                        <SearchBar />
                                         <Button
                                                 aria-label={`Cart with ${itemCount} items`}
                                                 asChild
@@ -114,6 +107,7 @@ function Navbar() {
                                                                 {link.label}
                                                         </NavLink>
                                                 ))}
+                                                <SearchBar mobile onSubmit={closeMenu} />
                                                 <NavLink to="/cart" onClick={closeMenu} className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent">
                                                         <ShoppingCart className="size-4" />
                                                         Cart ({itemCount})

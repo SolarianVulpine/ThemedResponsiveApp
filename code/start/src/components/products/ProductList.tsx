@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { categories, products } from "@/data/products";
 import { cn } from "@/lib/utils";
@@ -7,14 +8,22 @@ import { Button } from "@/components/ui/button";
 import type { ProductCategory } from "@/types/product";
 
 export function ProductList() {
+        const [searchParams] = useSearchParams();
         const [selectedCategory, setSelectedCategory] = useState<ProductCategory | "All">("All");
-        const visibleProducts = selectedCategory === "All"
+        const searchQuery = searchParams.get("q")?.trim().toLowerCase() ?? "";
+        const visibleProducts = (selectedCategory === "All"
                 ? products
-                : products.filter((product) => product.category === selectedCategory);
+                : products.filter((product) => product.category === selectedCategory)
+        ).filter((product) =>
+                !searchQuery
+                || product.name.toLowerCase().includes(searchQuery)
+                || product.category.toLowerCase().includes(searchQuery)
+                || product.description.toLowerCase().includes(searchQuery),
+        );
 
         return (
                 <div className="grid gap-8 lg:grid-cols-[12rem_1fr]">
-                        <aside>
+                        <aside className="sm:sticky sm:top-24 sm:self-start">
                                 <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Categories</h2>
                                 <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">
                                         {["All", ...categories].map((category) => (
@@ -33,12 +42,17 @@ export function ProductList() {
                                 <div className="mb-5 flex items-end justify-between gap-4">
                                         <div>
                                                 <p className="text-sm text-muted-foreground">Workshop collection</p>
-                                                <h1 className="text-3xl font-semibold tracking-tight">{selectedCategory}</h1>
+                                                <h1 className="text-3xl font-semibold tracking-tight">{searchQuery ? `Results for "${searchParams.get("q")}"` : selectedCategory}</h1>
                                         </div>
                                         <p className="text-sm text-muted-foreground">{visibleProducts.length} items</p>
                                 </div>
                                 <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                                         {visibleProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+                                        {visibleProducts.length === 0 && (
+                                                <p className="col-span-full rounded-lg border border-dashed p-8 text-center text-muted-foreground">
+                                                        No products match your search.
+                                                </p>
+                                        )}
                                 </div>
                         </section>
                 </div>
