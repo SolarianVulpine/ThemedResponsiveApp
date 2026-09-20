@@ -1,5 +1,24 @@
-// Hero img: src/assets/workshop.jpg
-// About page: has a section that tells a brief history of the workshop, an accordion that shows frequently asked questions, and a contact form that allows users to message the workshop about custom products or services. The about page is responsive; on md and larger the history section is on the left and the FAQ accordion is on the right. On smaller screens the history section is stacked on top of the FAQ accordion. The contact form is always at the bottom of the page and is responsive, with input fields stacked vertically on smaller screens and arranged in a grid on larger screens.
-// uses zustand for state management, react-router-dom for routing, and tailwindcss for styling. The app is fully responsive and works on all screen sizes. The app is built with React and TypeScript.
-// components are provided using shadcn/ui and shadcn/icons.
-// components: HistorySection, FAQAccordion, ContactForm
+import { ContactForm } from "@/components/about/ContactForm";
+import { FAQAccordion } from "@/components/about/FAQAccordion";
+import { HistorySection } from "@/components/about/HistorySection";
+import { Footer } from "@/components/layout/Footer";
+
+export default function About() {
+        return (
+                <div className="flex min-h-[calc(100vh-4rem)] flex-col gap-12">
+                        <section>
+                                <p className="text-sm font-medium uppercase tracking-wider text-primary">The workshop story</p>
+                                <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">Craft that outlasts the age that made it.</h1>
+                                <p className="mt-4 max-w-2xl text-muted-foreground">Learn how a neutral forge became a home for unusual materials, careful hands, and curious commissions.</p>
+                        </section>
+
+                        <div className="grid gap-8 md:grid-cols-2 md:items-start">
+                                <HistorySection />
+                                <FAQAccordion />
+                        </div>
+
+                        <ContactForm />
+                        <Footer />
+                </div>
+        );
+}

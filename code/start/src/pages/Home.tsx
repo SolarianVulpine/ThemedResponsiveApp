@@ -1,6 +1,34 @@
-// Hero img: src/assets/workshop.jpg
-// Horizontal navbar: uses react routing to navigate to other pages. Has a button to open cart summary, a search bar and a button to toggle dark mode. The navbar is responsive and collapses into a hamburger menu on smaller screens.
-// Home page: has a scrolling modal that shows featured products, a section that shows a calendar of available appointments, and a footer with links to social media and contact information. The home page is responsive; on md and larger the products are two thirds of the left side and the calendar is one third of the right side. on smaller screens the products are stacked on top of the calendar. The footer is always at the bottom of the page and is responsive, with social media links on the left and contact information on the right.
-// uses zustand for state management, react-router-dom for routing, and tailwindcss for styling. The app is fully responsive and works on all screen sizes. The app is built with React and TypeScript.
-// components are provided using shadcn/ui and shadcn/icons.
-// components: Navbar, FeaturedProducts, Calendar, Footer, CartSummaryModal, SearchBar, DarkModeToggle, HamburgerMenu
+import workshopImage from "@/assets/workshop.jpg";
+import { Calendar } from "@/components/home/Calendar";
+import { Footer } from "@/components/layout/Footer";
+import { FeaturedProducts } from "@/components/products/FeaturedProducts";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+export default function Home() {
+        return (
+                <div className="flex min-h-[calc(100vh-4rem)] flex-col gap-12">
+                        <section className="relative overflow-hidden rounded-lg border bg-card">
+                                <img src={workshopImage} alt="Tools and materials inside the workshop" className="h-72 w-full object-cover md:h-96" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/65 to-transparent" />
+                                <div className="absolute inset-0 flex max-w-2xl flex-col justify-center gap-5 px-6 py-10 md:px-10">
+                                        <p className="text-sm font-medium uppercase tracking-wider text-primary">Handcrafted for curious minds</p>
+                                        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Find something worth keeping.</h1>
+                                        <p className="max-w-lg text-muted-foreground">Explore practical tools, curious treasures, and workshop-made goods shaped with patience.</p>
+                                        <div>
+                                                <Button asChild>
+                                                        <Link to="/products">Explore the collection</Link>
+                                                </Button>
+                                        </div>
+                                </div>
+                        </section>
+
+                        <div className="grid gap-10 lg:grid-cols-[2fr_1fr] lg:items-start">
+                                <FeaturedProducts />
+                                <Calendar />
+                        </div>
+
+                        <Footer />
+                </div>
+        );
+}

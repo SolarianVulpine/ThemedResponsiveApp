@@ -187,7 +187,7 @@ This week I am changing my approach. I've created this log to record implementat
 
 ### Remaining content work:
 
-- Implement Home, About, and Cart page exports and UI.
+- Cart page implementation is complete; implement Home and About page exports and UI.
 - Connect the generated Studio block only if its visual structure is selected for the active Products page.
 
 ## 10. Testing and Quality Review
@@ -213,7 +213,8 @@ This week I am changing my approach. I've created this log to record implementat
 - Resolved the missing Shadcn Studio registry configuration.
 - Preserved customized shadcn primitives instead of overwriting them.
 - Resolved the catalog/cart `name` type mismatch and replaced ES2021 `replaceAll` for the ES2020 target.
-- Current blocker: Home, About, and Cart have no default React exports, so the full TypeScript build does not pass.
+- Implemented Cart with an empty state, responsive item list, quantity controls, item removal, order summary, and continue-shopping flow.
+- Current blocker: Home and About have no default React exports, so the full TypeScript build does not pass.
 
 ## 11. Screenshots and Evidence
 
@@ -265,7 +266,7 @@ Not started
 
 ### Final issues or follow-up work:
 
-- Implement and export the Home, About, and Cart pages.
+- Implement and export the Home and About pages.
 - Complete the full TypeScript build and browser-based responsive checks.
 - Capture light, dark, and responsive screenshots.
 - Update README setup, functionality, and theming documentation.
