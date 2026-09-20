@@ -15,7 +15,7 @@ const questions = [
 
 export function FAQAccordion() {
         return (
-                <Card>
+                <Card className="md:sticky md:top-24 md:self-start">
                         <CardHeader>
                                 <p className="text-sm font-medium uppercase tracking-wider text-primary">Common questions</p>
                                 <CardTitle className="text-2xl">Before you enter the forge</CardTitle>

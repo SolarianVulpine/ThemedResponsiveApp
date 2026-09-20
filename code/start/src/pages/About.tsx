@@ -7,6 +7,7 @@ export default function About() {
         return (
                 <div className="flex min-h-[calc(100vh-4rem)] flex-col gap-12">
                         <section>
+                                
                                 <p className="text-sm font-medium uppercase tracking-wider text-primary">The workshop story</p>
                                 <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">Craft that outlasts the age that made it.</h1>
                                 <p className="mt-4 max-w-2xl text-muted-foreground">Learn how a neutral forge became a home for unusual materials, careful hands, and curious commissions.</p>
