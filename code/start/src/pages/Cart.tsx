@@ -1,0 +1,5 @@
+// Hero img: src/assets/workshop.jpg
+// cart page: has a section that shows a list of items in the cart, each with an image, title, description, price, and quantity selector. The cart page also has a summary section that shows the total price and a button to proceed to checkout. The cart page is responsive; on md and larger the items are displayed in a grid layout with the summary section on the right. On smaller screens the items are stacked on top of the summary section. The cart page also has a footer with links to social media and contact information. The footer is always at the bottom of the page and is responsive, with social media links on the left and contact information on the right.
+// uses zustand for state management, react-router-dom for routing, and tailwindcss for styling. The app is fully responsive and works on all screen sizes. The app is built with React and TypeScript.
+// components are provided using shadcn/ui and shadcn/icons.
+// components: CartItemList, CartSummary, Footer

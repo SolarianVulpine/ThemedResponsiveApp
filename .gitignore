@@ -39,3 +39,8 @@ Thumbs.db
 
 # TypeScript build info
 *.tsbuildinfo
+
+# Pinegrow local project files
+_pgbackup/
+_pginfo/
+pinegrow.json
