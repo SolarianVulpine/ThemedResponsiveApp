@@ -7,5 +7,5 @@
 // List of products (six products per category) and their prices: Swords: Longsword: $100, Shortsword: $50, Katana: $200, Rapier: $150, Scimitar: $120, Greatsword: $250; Shields: Buckler: $30, Kite Shield: $80, Tower Shield: $150, Round Shield: $60, Heater Shield: $100, Pavise: $200; Armor: Leather Armor: $75, Chainmail Armor: $125, Plate Armor: $250, Scale Armor: $175, Brigandine Armor: $200, Gambeson: $50; Potions: Healing Potion: $25, Mana Potion: $30, Strength Potion: $40, Invisibility Potion: $50, Speed Potion: $35, Fire Resistance Potion: $45; Scrolls: Scroll of Fireball: $60, Scroll of Teleportation: $75, Scroll of Summoning: $80, Scroll of Protection: $90, Scroll of Healing: $85, Scroll of Invisibility: $95; Accessories: Ring of Strength: $100, Amulet of Health: $125, Belt of Giant Strength: $150, Cloak of Invisibility: $200, Boots of Speed: $75, Gloves of Dexterity: $60
 // List of 'Featured Products' (one product per category) and percent of sale: Longsword: 10%, Kite Shield: 15%, Plate Armor: 20%, Healing Potion: 25%, Scroll of Fireball: 30%, Ring of Strength: 35%
 
-import { ProductList } from "@/components/products/ProductList";
-import { Footer } from "@/components/layout/Footer";
+// import { ProductList } from "@/components/products/ProductList";
+// import { Footer } from "@/components/layout/Footer";
