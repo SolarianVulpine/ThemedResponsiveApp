@@ -21,8 +21,14 @@ cd ThemedResponsiveApp/code/start
 
 If the project was downloaded as a ZIP file, extract it and open a terminal in `ThemedResponsiveApp/code/start`.
 
+### Launch Docker & DevContainer
+
+Have Docker engine running and reopen workspace in container.
+Found quickly from the menu pulled up by clicking the stacked `><` in the bottom-most left-most corner
+
 ### Install dependencies
 
+Once inside container run:
 ```bash
 npm install
 ```
