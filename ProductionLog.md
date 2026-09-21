@@ -138,6 +138,8 @@ This week I am changing my approach. I've created this log to record implementat
 ### Theme behavior implemented:
 
 - Added a persisted Zustand theme store with light/dark state and a toggle action.
+![Dark Mode](code/start/public/screenshots/darkmode.jpe).
+![Light Mode](code/start/public/screenshots/lightmode.jpe)
 - Navbar applies or removes the `dark` class on the document root.
 
 ### Light and dark mode notes:
