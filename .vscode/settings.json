@@ -10,6 +10,10 @@
           }
         ]
       }
+    },
+    "app-routes": {
+      "routes": ["/", "/products"],
+      "current_route": "/products"
     }
   }
 }

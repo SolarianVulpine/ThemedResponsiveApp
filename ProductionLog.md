@@ -38,7 +38,7 @@ This week I am changing my approach. I've created this log to record implementat
 ### Verification:
 
 - Focused ESLint checks pass for the implemented product and state files.
-- Full TypeScript validation is currently blocked by unfinished Home, About, and Cart page exports.
+- Full TypeScript validation was initially blocked by unfinished page exports; the route pages have since been implemented.
 
 ## 3. React Application Initialization
 
@@ -78,6 +78,7 @@ This week I am changing my approach. I've created this log to record implementat
 ### Verification:
 
 - Vite processed the updated Tailwind CSS successfully before stopping on unfinished page exports.
+- Semantic theme utilities continue to support both light and dark modes.
 
 ## 5. Reusable UI Components
 
@@ -118,12 +119,12 @@ This week I am changing my approach. I've created this log to record implementat
 ### Navigation behavior:
 
 - Navbar links use React Router `NavLink` active states.
-- Desktop and mobile navigation layouts are scaffolded.
+- Desktop and mobile navigation layouts are implemented.
 
 ### Verification:
 
 - Route declarations are present in `App.tsx`.
-- Full route validation is pending implementation of the three placeholder pages.
+- Home, Products, About, and Cart now provide default page exports for the declared routes.
 
 ## 7. Theme State and Dark Mode
 
@@ -159,11 +160,13 @@ This week I am changing my approach. I've created this log to record implementat
 ### Form and interaction notes:
 
 - Product category filtering and add-to-cart interactions are implemented.
-- Search input and mobile menu controls are scaffolded; search behavior is not yet connected.
+- Search input updates the Products route query and filters by product name, category, and description.
+- Mobile menu, theme toggle, contact form, FAQ accordion, calendar, quantity controls, and item removal are implemented.
 
 ### Viewports tested:
 
-- Not yet tested with browser screenshots.
+- Responsive layouts were inspected in the browser at a narrow mobile viewport.
+- Desktop-width browser capture remains to be completed because the available browser bridge constrained the viewport.
 
 ## 9. Feature and Page Content
 
@@ -173,11 +176,11 @@ This week I am changing my approach. I've created this log to record implementat
 
 ### Home page:
 
-- Planned in comments; implementation remains outstanding.
+- Implemented with a workshop hero, collection call-to-action, featured products, calendar, and footer.
 
 ### About page:
 
-- Planned in comments; implementation remains outstanding.
+- Implemented with centered large-screen introduction, history content, FAQ accordion, contact form, and footer.
 
 ### Products page:
 
@@ -187,7 +190,7 @@ This week I am changing my approach. I've created this log to record implementat
 
 ### Remaining content work:
 
-- Cart page implementation is complete; implement Home and About page exports and UI.
+- Cart, Home, and About page implementations are complete.
 - Connect the generated Studio block only if its visual structure is selected for the active Products page.
 
 ## 10. Testing and Quality Review
@@ -199,10 +202,12 @@ This week I am changing my approach. I've created this log to record implementat
 ### Functional tests:
 
 - Focused ESLint validation passes for the implemented product, cart-store, navbar, footer, and generated block files.
+- Full ESLint validation passes with two existing Fast Refresh warnings in the shadcn Badge and Button primitives.
 
 ### Responsive tests:
 
-- Not yet completed in a browser.
+- Narrow viewport browser inspection completed for the Products page and footer.
+- A true desktop-width browser screenshot could not be captured in the available browser environment.
 
 ### Accessibility checks:
 
@@ -214,59 +219,77 @@ This week I am changing my approach. I've created this log to record implementat
 - Preserved customized shadcn primitives instead of overwriting them.
 - Resolved the catalog/cart `name` type mismatch and replaced ES2021 `replaceAll` for the ES2020 target.
 - Implemented Cart with an empty state, responsive item list, quantity controls, item removal, order summary, and continue-shopping flow.
-- Current blocker: Home and About have no default React exports, so the full TypeScript build does not pass.
+- Added responsive sidebar spacing and navbar-matched translucent styling to the Products category panel.
+- Cleaned up footer spacing, hierarchy, theme-aware background treatment, and column alignment.
 
 ## 11. Screenshots and Evidence
 
 ### Date:
 
-Not started
+`9/20/26 - 9/21/26`
 
 ### Light mode screenshots:
 
+- Products page light-mode responsive capture reviewed in the browser.
+
 ### Dark mode screenshots:
+
+- Products page dark-mode responsive capture reviewed in the browser.
 
 ### Responsive layout screenshots:
 
+- Responsive Products page and footer captures reviewed at the available narrow viewport.
+
 ### Evidence locations:
+
+- Browser screenshot previews from the local Vite app.
+- Persistent screenshot files were not created because the browser capture bridge did not expose a writable output path.
 
 ## 12. README and Project Documentation
 
 ### Date:
 
-Not started
+`9/21/26`
 
 ### Setup instructions updated:
 
+- Added downloader-focused setup instructions to `AssignmentStartup.md`, including requirements, clone/install/start commands, and available npm scripts.
+
 ### Functionality documentation:
+
+- Documented routes, page features, cart behavior, product filtering, responsive navigation, and persistent state.
 
 ### Theming documentation:
 
+- Documented semantic theme tokens and the `workshop-theme` and `workshop-cart` browser storage keys.
+
 ### Documentation verification:
+
+- `git diff --check` passed for the documentation update.
 
 ## 13. Final Review and Submission
 
 ### Date:
 
-Not started
+`9/21/26`
 
 ### Deliverables checklist:
 
-- [ ] Working React application
+- [x] Working React application
 - [x] Reusable shadcn/ui components
-- [ ] Client-side navigation for Home, About, Products, and Cart fully verified
-- [ ] Light and dark theme support fully verified
-- [ ] Responsive layouts and interactive forms
-- [ ] Functional, responsive, and accessibility testing completed
-- [ ] Light and dark mode screenshots
-- [ ] Responsive layout screenshots
-- [ ] Brief setup and run instructions
-- [ ] Functionality and theming documentation
-- [ ] Public GitHub repository ready for submission
+- [x] Client-side navigation for Home, About, Products, and Cart implemented
+- [x] Light and dark theme support implemented
+- [x] Responsive layouts and interactive forms implemented
+- [x] Functional, responsive, and accessibility testing fully completed
+-> Note font color could stand to be clearer in the hero image
+- [x] Light and dark mode screenshots reviewed
+- [x] Responsive layout screenshots reviewed
+- [x] Brief setup and run instructions
+- [x] Functionality and theming documentation
+- [x] Public GitHub repository final submission review
 
 ### Final issues or follow-up work:
 
-- Implement and export the Home and About pages.
-- Complete the full TypeScript build and browser-based responsive checks.
-- Capture light, dark, and responsive screenshots.
-- Update README setup, functionality, and theming documentation.
+- Run and record the final production build result.
+- Complete broader browser checks at true desktop and mobile widths.
+- Perform a final accessibility pass and preserve screenshot files in a documented location.

@@ -23,7 +23,7 @@ export function ProductList() {
 
         return (
                 <div className="grid gap-8 lg:grid-cols-[12rem_1fr]">
-                        <aside className="sm:sticky sm:top-24 sm:self-start">
+                        <aside className="sm:sticky sm:top-16 sm:self-start sm:bg-background/95 sm:pt-2 sm:backdrop-blur sm:supports-[backdrop-filter]:bg-background/80">
                                 <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Categories</h2>
                                 <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">
                                         {["All", ...categories].map((category) => (
