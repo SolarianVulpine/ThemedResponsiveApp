@@ -10,7 +10,13 @@ This week I am changing my approach. I've created this log to record implementat
 ### Goals and acceptance criteria:
 
 - [x] Decide on App functionality
-- [ ] Wireframe pages (at least three)
+- [x] Wireframe pages (at least three)
+
+![Wireframes](code/start/public/screenshots/WireFrame.jpg)
+![Full Whiteboard](code/start/public/screenshots/FullBoard.jpg)
+
+
+
 
 ### Notes and decisions:
 
