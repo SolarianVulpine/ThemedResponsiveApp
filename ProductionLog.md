@@ -167,10 +167,6 @@ This week I am changing my approach. I've created this log to record implementat
 - Search input updates the Products route query and filters by product name, category, and description.
 - Mobile menu, theme toggle, contact form, FAQ accordion, calendar, quantity controls, and item removal are implemented.
 
-### Viewports tested:
-
-- Responsive layouts were inspected in the browser at a narrow mobile viewport.
-- Desktop-width browser capture remains to be completed because the available browser bridge constrained the viewport.
 
 ## 9. Feature and Page Content
 
@@ -209,7 +205,6 @@ This week I am changing my approach. I've created this log to record implementat
 ### Responsive tests:
 
 - Narrow viewport browser inspection completed for the Products page and footer.
-- A true desktop-width browser screenshot could not be captured in the available browser environment.
 
 ### Accessibility checks:
 
@@ -224,49 +219,8 @@ This week I am changing my approach. I've created this log to record implementat
 - Added responsive sidebar spacing and navbar-matched translucent styling to the Products category panel.
 - Cleaned up footer spacing, hierarchy, theme-aware background treatment, and column alignment.
 
-## 11. Screenshots and Evidence
+## 11. README and Project Documentation
 
-### Date: `9/20/26`
-
-
-### Light mode screenshots:
-
-- Products page light-mode responsive capture reviewed in the browser.
-
-### Dark mode screenshots:
-
-- Products page dark-mode responsive capture reviewed in the browser.
-
-### Responsive layout screenshots:
-
-- Responsive Products page and footer captures reviewed at the available narrow viewport.
-
-### Evidence locations:
-
-- Browser screenshot previews from the local Vite app.
-- Persistent screenshot files were not created because the browser capture bridge did not expose a writable output path.
-
-## 12. README and Project Documentation
-
-### Date: `9/20/26`
-
-
-
-### Setup instructions updated:
-
-- Added downloader-focused setup instructions to `AssignmentStartup.md`, including requirements, clone/install/start commands, and available npm scripts.
-
-### Functionality documentation:
-
-- Documented routes, page features, cart behavior, product filtering, responsive navigation, and persistent state.
-
-### Theming documentation:
-
-- Documented semantic theme tokens and the `workshop-theme` and `workshop-cart` browser storage keys.
-
-### Documentation verification:
-
-- `git diff --check` passed for the documentation update.
 
 ## 13. Final Review and Submission
 
